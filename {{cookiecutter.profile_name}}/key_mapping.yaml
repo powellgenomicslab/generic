@@ -31,7 +31,16 @@ lsf:
     queue: "-q {}"
     time: "-W {}"
     nodes: "-C {}"
-
-
+sge:
+  command: "qsub"
+  key_mapping:
+    name: "-N {}"
+    account: "-A {}"
+    queue: "-q {}"
+    threads: "-pe smp {}"
+    mem: "-l mem_requested={}G"
+    array: "-t {}"
+    scratch: "-l tmp_requested={}G"
+    repeat: "-r {}"
 
 # for other cluster systems see: https://slurm.schedmd.com/rosetta.pdf
